@@ -1,0 +1,12 @@
+# ignore this when bulilding:
+*.py
+*/.git*
+*/temp*
+*.yml
+*.yaml
+*.env
+
+# EXCEPT this:
+!rest_app.py
+!db_connector.py
+

@@ -1,0 +1,10 @@
+---
+version: '3'
+services:
+  web-app:
+    environment:
+      -  SECRET
+    image: "whitehawk2/ci-repo-4:${IMAGE_TAG}" 
+    ports:
+      # ingress p5000 to p5000
+      - "5000:5000"
