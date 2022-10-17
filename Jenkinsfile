@@ -85,7 +85,8 @@ pipeline {
                 HELM_SQL = credentials('helm_remotemysql')
             }
             steps {
-                sh 'helm install alon-proj ./Chart/alon-6.tgz --set image.tag=${BUILD_NUMBER} --set store.dbuser=${HELM_SQL_USR} --set store.dbpas=${HELM_SQL_PSW}'
+                // No more hardcoded versions for production!
+                sh 'helm install alon-proj ./Chart/alon-${VERSION}.tgz --set image.tag=${BUILD_NUMBER} --set store.dbuser=${HELM_SQL_USR} --set store.dbpas=${HELM_SQL_PSW}'
             }
         }
         stage('get helm service url') {
